@@ -40,20 +40,23 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
       <HintPath>..\packages\MvvmLightLibs.4.3.31.1\lib\net40\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.WPF4">
       <HintPath>..\packages\MvvmLightLibs.4.3.31.1\lib\net40\GalaSoft.MvvmLight.WPF4.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>D:\NHibernate-3.3.3.GA-bin\Required_Bins\Iesi.Collections.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>D:\NHibernate-3.3.3.GA-bin\Required_Bins\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -80,7 +83,9 @@
     </ApplicationDefinition>
     <Compile Include="Model\Entities\Funcionario.cs" />
     <Compile Include="Model\Entities\Usuario.cs" />
-    <Compile Include="Model\NHibernateConf.cs" />
+    <Compile Include="Model\Mappings\FuncionarioMapping.cs" />
+    <Compile Include="Model\Mappings\UsuarioMapping.cs" />
+    <Compile Include="Model\NHibernateHelper.cs" />
     <Compile Include="Model\Repository\IRepositorio.cs" />
     <Compile Include="Model\Repository\Repositorio.cs" />
     <Compile Include="ViewModel\CadastroFuncionarioViewModel.cs" />
@@ -125,7 +130,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,13 +141,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Model\Mappings\Usuario.hbm.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Double-J-Design-Origami-Colored-Pencil-Blue-home.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Model\Mappings\Funcionario.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

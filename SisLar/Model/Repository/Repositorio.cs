@@ -3,28 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NHibernate;
+using System.Linq.Expressions;
+using NHibernate.Event;
+using NHibernate.Linq;
+using NHibernate.Persister.Entity;
+using NHibernate.Type;
 
 namespace SisLar.Model.Repository
 {
     public class Repositorio<T> : IRepositorio<T>
     {
-        public T Retorna(int handle)
+        public T Retorna(long handle)
         {
-            return (T)NHibernateConf.Session.Get(typeof(T), handle);
+            return NHibernateHelper.Session.Get<T>(handle);
         }
 
-        public IList<T> RetornaTodos()
+        public IQueryable<T> RetornaTodos()
         {
-            return NHibernateConf.Session.CreateCriteria(typeof(T)).List<T>();
+            return (from t in NHibernateHelper.Session.Query<T>()
+                    select t);
+        }
+
+        public IQueryable<T> Consulta(Expression<Func<T, bool>> where)
+        {
+            return NHibernateHelper.Session.Query<T>().Where(where);
         }
 
         public bool Inclui(T entity)
         {
-            using (ITransaction newTransaction = NHibernateConf.Session.BeginTransaction())
+            using (ITransaction newTransaction = NHibernateHelper.Session.BeginTransaction())
             {
                 try
                 {
-                    NHibernateConf.Session.SaveOrUpdate(entity);
+                    NHibernateHelper.Session.Save(entity);
                     newTransaction.Commit();
                 }
                 catch (Exception e)
@@ -38,11 +49,11 @@ namespace SisLar.Model.Repository
 
         public bool Excluir(T entity)
         {
-            using (ITransaction newTransaction = NHibernateConf.Session.BeginTransaction())
+            using (ITransaction newTransaction = NHibernateHelper.Session.BeginTransaction())
             {
                 try
                 {
-                    NHibernateConf.Session.Delete(entity);
+                    NHibernateHelper.Session.Delete(entity);
                     newTransaction.Commit();
                 }
                 catch (Exception e)
@@ -56,11 +67,11 @@ namespace SisLar.Model.Repository
 
         public bool Altera(T entity)
         {
-            using (ITransaction newTransaction = NHibernateConf.Session.BeginTransaction())
+            using (ITransaction newTransaction = NHibernateHelper.Session.BeginTransaction())
             {
                 try
                 {
-                    NHibernateConf.Session.Save(entity);
+                    NHibernateHelper.Session.Save(entity);
                     newTransaction.Commit();
                 }
                 catch (Exception e)
@@ -74,7 +85,7 @@ namespace SisLar.Model.Repository
 
         public void Atualiza()
         {
-            NHibernateConf.Session.Flush();
+            NHibernateHelper.Session.Flush();
         }
     }
 }

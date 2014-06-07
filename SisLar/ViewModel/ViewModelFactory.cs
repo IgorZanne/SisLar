@@ -15,7 +15,7 @@ namespace SisLar.ViewModel
 
         public ViewModelFactory()
         {
-            NHibernateConf.Initialize("SisLar");
+            NHibernateHelper.InitializeSessionFactory();
         }
         public MainViewModel MainViewModel
         {

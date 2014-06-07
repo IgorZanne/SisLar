@@ -33,16 +33,22 @@ namespace SisLar
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            NHibernateConf.Initialize("NHibernate");
-            var USUARIO = repUsuario.Retorna(1);
+            var sessionFactory = NHibernateHelper.SessionFactory;
+
+            var usuario = repUsuario.Retorna(1);
             var usuarios = repUsuario.RetornaTodos();
+
+            var novoUser2 = new Usuario();
+            novoUser2.Id = 7;
+            novoUser2.Login = "teste1";
+            novoUser2.Senha = "teste1";
+            repUsuario.Inclui(novoUser2);
+
             var consulta = usuarios.Where(u => u.Login.ToUpper().Equals(edtUsuario.Text.ToUpper()));
             if (!consulta.Any())
                 MessageBox.Show("Usuário não encontrado", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             else
                 MessageBox.Show("Usuário encontrado", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
-        
     }
 }
