@@ -8,7 +8,7 @@ namespace SisLar.Model.Repository
 {
     public interface IRepositorio<T>
     {
-        T Retorna(long handle);
+        T Retorna(int handle);
 
         IQueryable<T> RetornaTodos();
 
@@ -17,6 +17,8 @@ namespace SisLar.Model.Repository
         bool Inclui(T entity);
 
         bool Excluir(T entity);
+
+        bool ExcluirVarios(IQueryable<T> listEntity);
 
         bool Altera(T entity);
     }

@@ -2,13 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using NHibernate.Tool.hbm2ddl;
-using FluentNHibernate.Automapping;
+using FluentNHibernate.Conventions;
+using FluentNHibernate.Conventions.AcceptanceCriteria;
 using FluentNHibernate.Conventions.Helpers;
+using FluentNHibernate.Conventions.Inspections;
+using FluentNHibernate.Conventions.Instances;
+using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Cfg.MappingSchema;
+using NHibernate.Event;
+using NHibernate.Exceptions;
+using NHibernate.Hql;
+using NHibernate.Linq;
+using NHibernate.Mapping.ByCode;
+using NHibernate.Persister.Entity;
+using FluentNHibernate.Automapping;
+using NHibernate.Tool.hbm2ddl;
 
 namespace SisLar.Model
 {
@@ -43,9 +54,10 @@ namespace SisLar.Model
         {
             _sessionFactory = Fluently.Configure()
                 .Database(CreateDbConfig())
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<SisLar.Model.Entities.Usuario>())
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<SisLar.Model.Entities.Funcionario>())
-                .ExposeConfiguration(DropCreateSchema)
+                .Mappings(m => m.AutoMappings.Add(CreateMappings()))
+                .ExposeConfiguration(config => new SchemaExport(config).Execute(true, false, true))
+                //.ExposeConfiguration(config => new SchemaUpdate(config).Execute(false, true))
+                .ExposeConfiguration(x => x.SetProperty("connection.release_mode", "on_close"))
                 .BuildSessionFactory();
         }
 
@@ -62,20 +74,18 @@ namespace SisLar.Model
                     .Server( "ZANNE-PC\\SQLEXPRESS" )
                     .Database( "BD_SISLAR" )
                     .Username( "sa" )
-                    .Password( "admin1" ));
+                    .Password( "admin1" ))
+                .DefaultSchema("dbo")
+                .ShowSql();
         }
 
         private static AutoPersistenceModel CreateMappings()
         {
+            var teste = AutoMap
+                .Assembly(System.Reflection.Assembly.GetCallingAssembly());
             return AutoMap
                 .Assembly(System.Reflection.Assembly.GetCallingAssembly())
-                .Where(t => t.Namespace == "SisLar.Model.Entities")
-                .Conventions.Setup(c => c.Add(DefaultCascade.SaveUpdate()));
-        }
-
-        private static void DropCreateSchema(Configuration cfg)
-        {
-            new SchemaExport(cfg).Create(true, true);
+                .Where(t => t.Namespace == "SisLar.Model.Entities");
         }
     }
 }

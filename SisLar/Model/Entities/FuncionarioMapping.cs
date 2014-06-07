@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentNHibernate.Mapping;
-using SisLar.Model.Entities;
 
-namespace SisLar.Model.Mappings
+namespace SisLar.Model.Entities
 {
     class FuncionarioMapping : ClassMap<Funcionario>
     {

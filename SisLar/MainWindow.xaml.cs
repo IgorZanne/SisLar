@@ -34,21 +34,38 @@ namespace SisLar
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             var sessionFactory = NHibernateHelper.SessionFactory;
+            try
+            {
 
-            var usuario = repUsuario.Retorna(1);
-            var usuarios = repUsuario.RetornaTodos();
+                var usuario = repUsuario.Retorna(0);
+                var usuarios = repUsuario.RetornaTodos();
 
-            var novoUser2 = new Usuario();
-            novoUser2.Id = 7;
-            novoUser2.Login = "teste1";
-            novoUser2.Senha = "teste1";
-            repUsuario.Inclui(novoUser2);
+                var novoUser = new Usuario()
+                {
+                    Id = 1,
+                    Login = "admin",
+                    Nome = "Administrador",
+                    Senha = "admin"
+                };
+                repUsuario.Inclui(novoUser);
 
-            var consulta = usuarios.Where(u => u.Login.ToUpper().Equals(edtUsuario.Text.ToUpper()));
-            if (!consulta.Any())
-                MessageBox.Show("Usuário não encontrado", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
-            else
-                MessageBox.Show("Usuário encontrado", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                var consulta = usuarios.Where(u => u.Login.ToUpper().Equals(edtUsuario.Text.ToUpper()));
+                if (!consulta.Any())
+                    MessageBox.Show("Usuário não encontrado", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                else
+                    MessageBox.Show("Usuário encontrado", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                sessionFactory.Dispose();
+                sessionFactory.Close();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SisLar.Model.Repository
 {
     public class Repositorio<T> : IRepositorio<T>
     {
-        public T Retorna(long handle)
+        public T Retorna(int handle)
         {
             return NHibernateHelper.Session.Get<T>(handle);
         }
@@ -54,6 +54,25 @@ namespace SisLar.Model.Repository
                 try
                 {
                     NHibernateHelper.Session.Delete(entity);
+                    newTransaction.Commit();
+                }
+                catch (Exception e)
+                {
+                    newTransaction.Rollback();
+                    throw e;
+                }
+            }
+            return true;
+        }
+
+        public bool ExcluirVarios(IQueryable<T> listEntity)
+        {
+            using (ITransaction newTransaction = NHibernateHelper.Session.BeginTransaction())
+            {
+                try
+                {
+                    foreach (var item in listEntity)
+                        NHibernateHelper.Session.Delete(item);
                     newTransaction.Commit();
                 }
                 catch (Exception e)

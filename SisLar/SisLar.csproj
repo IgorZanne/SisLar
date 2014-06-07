@@ -83,8 +83,8 @@
     </ApplicationDefinition>
     <Compile Include="Model\Entities\Funcionario.cs" />
     <Compile Include="Model\Entities\Usuario.cs" />
-    <Compile Include="Model\Mappings\FuncionarioMapping.cs" />
-    <Compile Include="Model\Mappings\UsuarioMapping.cs" />
+    <Compile Include="Model\Entities\FuncionarioMapping.cs" />
+    <Compile Include="Model\Entities\UsuarioMapping.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
     <Compile Include="Model\Repository\IRepositorio.cs" />
     <Compile Include="Model\Repository\Repositorio.cs" />
