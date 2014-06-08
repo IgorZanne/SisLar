@@ -14,13 +14,41 @@ using System.Windows.Shapes;
 namespace SisLar.View
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for TelaPrincipal.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class TelaPrincipal : Window
     {
-        public Window1()
+        //public IRepositorio<Usuario> repUsuario;
+
+        public TelaPrincipal()
         {
             InitializeComponent();
+            //repAlunos = new Repositorio<Usuario>();
+            
+        }
+
+        private void alunoCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            //this.GridAlunos.Items = 
+        }
+
+        private void funcionariosCadastro_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void estoqueProdutos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void contasPagar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void contasReceber_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

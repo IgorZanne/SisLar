@@ -1,23 +1,45 @@
 ﻿<Window x:Class="SisLar.View.TelaPrincipal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SisLar" Height="420" Width="680" Name="TelaInicial" ResizeMode="NoResize">
+        Title="SisLar" Height="420" Width="680" Name="TelaInicial" ResizeMode="NoResize" Icon="/SisLar;component/Double-J-Design-Origami-Colored-Pencil-Blue-home.ico">
     <Grid>
-        <Rectangle Height="100" HorizontalAlignment="Left" Margin="0,12,0,0" Name="retInfo" Stroke="Black" VerticalAlignment="Top" Width="663" Fill="#FFDFF0F1">
+        <Rectangle Height="100" HorizontalAlignment="Left" Margin="0,12,0,0" Name="retInfo" Stroke="Black" VerticalAlignment="Top" Width="658" Fill="#FFDFF0F1">
         </Rectangle>
-        <Menu Height="23" HorizontalAlignment="Left" Name="menuPrincipal" VerticalAlignment="Top" Width="663">
-            <MenuItem Name="menuAlunos" Header="Alunos" />
+        <Menu Height="23" HorizontalAlignment="Left" Name="menuPrincipal" VerticalAlignment="Top" Width="658">
+            <MenuItem Name="menuAlunos" Header="Alunos">
+                <MenuItem Name="alunoCadastro" Header="Cadastro" Click="alunoCadastro_Click" />
+            </MenuItem>
             <MenuItem Name="menuFuncionarios" Header="Funcionários">
-                <MenuItem Name="funcionariosCadastro" Header="Cadastro" />
+                <MenuItem Name="funcionariosCadastro" Header="Cadastro" Click="funcionariosCadastro_Click" />
                 <MenuItem Name="funcionariosCartao" Header="Cartao ponto" />
             </MenuItem>
-            <MenuItem Name="menuEstoque" Header="Estoque" />
+            <MenuItem Name="menuEstoque" Header="Estoque">
+                <MenuItem Name="estoqueProdutos" Header="Produtos" Click="estoqueProdutos_Click" />
+            </MenuItem>
             <MenuItem Name="menuContas" Header="Contas">
-                <MenuItem Name="contasPagar" Header="Pagar" />
-                <MenuItem Name="contasReceber" Header="Receber" />
+                <MenuItem Name="contasPagar" Header="Pagar" Click="contasPagar_Click" />
+                <MenuItem Name="contasReceber" Header="Receber" Click="contasReceber_Click" />
             </MenuItem>
         </Menu>
         <Label Content="Bom dia, " Height="28" HorizontalAlignment="Left" Margin="12,29,0,0" Name="lblRecepcao" VerticalAlignment="Top" />
-        <DataGrid AutoGenerateColumns="False" Name="GridAlunos" Height="200" HorizontalAlignment="Left" Margin="69,137,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="200" ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+        <DataGrid AutoGenerateColumns="True" Height="234" HorizontalAlignment="Left" Margin="0,147,0,0" Name="GridAlunos" VerticalAlignment="Top" Width="658" ItemsSource="{Binding}" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="8,118,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="138,118,0,0" Name="textBox1" VerticalAlignment="Top" Width="209" />
+        <Button Content="Pesquisar" Height="23" HorizontalAlignment="Right" Margin="0,118,230,0" Name="btnPesquisar" VerticalAlignment="Top" Width="75" />
+        <Button Height="28" HorizontalAlignment="Left" Margin="551,116,0,0" Name="btnInserir" VerticalAlignment="Top" Width="28" DataContext="{Binding}">
+            <StackPanel>
+                <Image Source="/SisLar;component/Icones/add.png" />
+            </StackPanel>
+        </Button>
+        <Button Height="28" HorizontalAlignment="Left" Margin="584,116,0,0" Name="btnEditar" VerticalAlignment="Top" Width="28">
+            <StackPanel>
+                <Image Source="/SisLar;component/Icones/pen.png" />
+            </StackPanel>
+        </Button>
+        <Button Height="28" HorizontalAlignment="Left" Margin="618,116,0,0" Name="btnExcluir" VerticalAlignment="Top" Width="28">
+            <StackPanel>
+                <Image Source="/SisLar;component/Icones/delete.png" />
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>
