@@ -12,10 +12,10 @@ namespace SisLar.Model.Entities
         {
             Table("SIS_USUARIO");
             SchemaAction.None();
-            Id(x => x.Handle, "HANDLE")
+            Id(x => x.Handle, "HANDLE").Access.ReadOnly()
                 .GeneratedBy.Identity();
 
-            Map(x => x.Id, "ID");
+            Map(x => x.Codigo, "CODIGO");
 
             Map(x => x.Login, "LOGIN")
                 .Length(50);

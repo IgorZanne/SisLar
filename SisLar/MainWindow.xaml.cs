@@ -42,7 +42,7 @@ namespace SisLar
 
                 var novoUser = new Usuario()
                 {
-                    Id = 1,
+                    Codigo = 1,
                     Login = "admin",
                     Nome = "Administrador",
                     Senha = "admin"

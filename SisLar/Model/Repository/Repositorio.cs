@@ -90,7 +90,7 @@ namespace SisLar.Model.Repository
             {
                 try
                 {
-                    NHibernateHelper.Session.Save(entity);
+                    NHibernateHelper.Session.Update(entity);
                     newTransaction.Commit();
                 }
                 catch (Exception e)

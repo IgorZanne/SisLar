@@ -1,7 +1,7 @@
-﻿<Window x:Class="SisLar.View.Window1"
+﻿<Window x:Class="SisLar.View.TelaPrincipal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SisLar" Height="418" Width="685" Name="TelaInicial" ResizeMode="NoResize">
+        Title="SisLar" Height="420" Width="680" Name="TelaInicial" ResizeMode="NoResize">
     <Grid>
         <Rectangle Height="100" HorizontalAlignment="Left" Margin="0,12,0,0" Name="retInfo" Stroke="Black" VerticalAlignment="Top" Width="663" Fill="#FFDFF0F1">
         </Rectangle>
@@ -18,5 +18,6 @@
             </MenuItem>
         </Menu>
         <Label Content="Bom dia, " Height="28" HorizontalAlignment="Left" Margin="12,29,0,0" Name="lblRecepcao" VerticalAlignment="Top" />
+        <DataGrid AutoGenerateColumns="False" Name="GridAlunos" Height="200" HorizontalAlignment="Left" Margin="69,137,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="200" ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
     </Grid>
 </Window>

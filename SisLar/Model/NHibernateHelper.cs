@@ -81,8 +81,6 @@ namespace SisLar.Model
 
         private static AutoPersistenceModel CreateMappings()
         {
-            var teste = AutoMap
-                .Assembly(System.Reflection.Assembly.GetCallingAssembly());
             return AutoMap
                 .Assembly(System.Reflection.Assembly.GetCallingAssembly())
                 .Where(t => t.Namespace == "SisLar.Model.Entities");

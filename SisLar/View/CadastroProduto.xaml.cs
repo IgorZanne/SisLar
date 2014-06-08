@@ -9,19 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SisLar.View
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for CadastroProduto.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class CadastroProduto : Page
     {
-        public Window1()
+        public CadastroProduto()
         {
             InitializeComponent();
-
         }
     }
 }

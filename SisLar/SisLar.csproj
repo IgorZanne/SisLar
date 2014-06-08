@@ -92,6 +92,18 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelFactory.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\CadastroAluno.xaml.cs">
+      <DependentUpon>CadastroAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CadastroFuncionario.xaml.cs">
+      <DependentUpon>CadastroFuncionario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CadastroProduto.xaml.cs">
+      <DependentUpon>CadastroProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contas.xaml.cs">
+      <DependentUpon>Contas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaPrincipal.xaml.cs">
       <DependentUpon>TelaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -107,6 +119,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CadastroAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CadastroFuncionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CadastroProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TelaPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
