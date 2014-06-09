@@ -15,37 +15,37 @@ namespace SisLar.Model.Entities
 
         #region ::: Propriedades públicas
 
-        [Description("Nome")]
+        [DisplayName("Nome")]
         public virtual string Nome { get; set; }
 
-        [Description("Código")]
+        [DisplayName("Código")]
         public virtual int? Codigo { get; set; }
 
-        [Description("Data de nascimento")]
+        [DisplayName("Data de nascimento")]
         public virtual DateTime? DataNascimento { get; set; }
 
-        [Description("Setor")]
+        [DisplayName("Setor")]
         public virtual string Setor { get; set; }
 
-        [Description("Endereço")]
+        [DisplayName("Endereço")]
         public virtual string Endereco { get; set; }
 
-        [Description("Data de admissão")]
+        [DisplayName("Data de admissão")]
         public virtual DateTime? DataAdmissao { get; set; }
 
-        [Description("Data da demissão")]
+        [DisplayName("Data da demissão")]
         public virtual DateTime? DataDemissao { get; set; }
 
-        [Description("Telefone")]
+        [DisplayName("Telefone")]
         public virtual string Telefone { get; set; }
 
-        [Description("Celular")]
+        [DisplayName("Celular")]
         public virtual string Celular { get; set; }
 
-        [Description("Sexo")]
+        [DisplayName("Sexo")]
         public virtual string Sexo { get; set; }
 
-        [Description("Carteira")]
+        [DisplayName("Carteira")]
         public virtual string Carteira { get; set; }
 
         public virtual long Handle { get; set; }

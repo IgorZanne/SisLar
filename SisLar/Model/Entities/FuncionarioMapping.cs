@@ -11,7 +11,7 @@ namespace SisLar.Model.Entities
         //Constructor
         public FuncionarioMapping()
         {
-            Table("SIS_FUNCIONARIO");
+            Table("Funcionario");
 
             Id(x => x.Handle, "HANDLE")
                 .GeneratedBy.Assigned();

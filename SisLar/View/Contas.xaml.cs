@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SisLar.Model.Enum;
 
 namespace SisLar.View
 {
@@ -20,8 +21,10 @@ namespace SisLar.View
     public partial class Contas : Page
     {
         private Frame frameTelaPrincipal;
-        public Contas(Frame frameTelaPrincipal)
+        private TipoLancamentoEnum tipoLancamento;
+        public Contas(Frame frameTelaPrincipal, TipoLancamentoEnum tipoLancamento)
         {
+            this.tipoLancamento = tipoLancamento;
             this.frameTelaPrincipal = frameTelaPrincipal;
             InitializeComponent();
         }

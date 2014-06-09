@@ -1,7 +1,7 @@
 ﻿<Window x:Class="SisLar.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SisLar" Height="163" Width="268" ResizeMode="NoResize" Background="{StaticResource LoginBackground}" Icon="/SisLar;component/home.ico">
+        Title="SisLar" Height="163" Width="268" ResizeMode="NoResize" Icon="/SisLar;component/home.ico" Background="#FFD9E3EF">
     <Grid Height="143" Name="grid1" Width="265">
         <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="40,85,0,0" Name="btnLogin" VerticalAlignment="Top" Width="75" Click="btnLogin_Click" />
         <Button Content="Cancelar" Height="23" HorizontalAlignment="Right" Margin="0,85,59,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />

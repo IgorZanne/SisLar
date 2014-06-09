@@ -37,12 +37,12 @@
                                 <Image Source="/SisLar;component/Icones/add.png" />
                             </StackPanel>
                         </Button>
-                        <Button Height="28" HorizontalAlignment="Left" Margin="43,6,0,0" Name="btnEditar" VerticalAlignment="Top" Width="28">
+                        <Button Height="28" HorizontalAlignment="Left" Margin="43,6,0,0" Name="btnEditar" VerticalAlignment="Top" Width="28" Click="btnEditar_Click">
                             <StackPanel>
                                 <Image Source="/SisLar;component/Icones/pen.png" />
                             </StackPanel>
                         </Button>
-                        <Button Height="28" HorizontalAlignment="Right" Margin="0,6,4,0" Name="btnExcluir" VerticalAlignment="Top" Width="28">
+                        <Button Height="28" HorizontalAlignment="Right" Margin="0,6,4,0" Name="btnExcluir" VerticalAlignment="Top" Width="28" Click="btnExcluir_Click">
                             <StackPanel>
                                 <Image Source="/SisLar;component/Icones/delete.png" />
                             </StackPanel>

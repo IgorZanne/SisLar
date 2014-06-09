@@ -65,11 +65,11 @@ namespace SisLar.View
                     frameTelaPrincipal.Navigate(novoFuncionario);
                     break;
                 case TipoCadastroEnum.LancamentoPagar:
-                    var novoLancamentoPagar = new Contas(frameTelaPrincipal);
+                    var novoLancamentoPagar = new Contas(frameTelaPrincipal, TipoLancamentoEnum.Pagar);
                     frameTelaPrincipal.Navigate(novoLancamentoPagar);
                     break;
                 case TipoCadastroEnum.LancamentoReceber:
-                    var novoLancamentoReceber = new Contas(frameTelaPrincipal);
+                    var novoLancamentoReceber = new Contas(frameTelaPrincipal, TipoLancamentoEnum.Receber);
                     frameTelaPrincipal.Navigate(novoLancamentoReceber);
                     break;
                 case TipoCadastroEnum.Produto:
@@ -84,6 +84,24 @@ namespace SisLar.View
 
                     break;
             }
+        }
+
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            var decisao =
+                MessageBox.Show("Confirma exclusão do registro?",
+                                "Excluir",
+                                MessageBoxButton.YesNo,
+                                MessageBoxImage.Question);
+            if (decisao == MessageBoxResult.Yes)
+            {
+
+            }
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

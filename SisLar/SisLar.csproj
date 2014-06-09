@@ -51,8 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>home.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -97,11 +96,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Entities\Aluno.cs" />
+    <Compile Include="Model\Entities\AlunoMapping.cs" />
     <Compile Include="Model\Entities\Funcionario.cs" />
+    <Compile Include="Model\Entities\Lancamento.cs" />
+    <Compile Include="Model\Entities\LancamentoMapping.cs" />
+    <Compile Include="Model\Entities\Produto.cs" />
+    <Compile Include="Model\Entities\ProdutoMapping.cs" />
     <Compile Include="Model\Entities\Usuario.cs" />
     <Compile Include="Model\Entities\FuncionarioMapping.cs" />
     <Compile Include="Model\Entities\UsuarioMapping.cs" />
+    <Compile Include="Model\Enum\SexoEnum.cs" />
     <Compile Include="Model\Enum\TipoCadastroEnum.cs" />
+    <Compile Include="Model\Enum\TipoLancamentoEnum.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
     <Compile Include="Model\Repository\IRepositorio.cs" />
     <Compile Include="Model\Repository\Repositorio.cs" />

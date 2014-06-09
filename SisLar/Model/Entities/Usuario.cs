@@ -17,16 +17,16 @@ namespace SisLar.Model.Entities
 
         public virtual long Handle { get; set; }
 
-        [Description("Nome")]
+        [DisplayName("Nome")]
         public virtual string Nome { get; set; }
 
-        [Description("Código")]
+        [DisplayName("Código")]
         public virtual int? Codigo { get; set; }
 
-        [Description("Login")]
+        [DisplayName("Login")]
         public virtual string Login { get; set; }
 
-        [Description("Senha")]
+        [DisplayName("Senha")]
         public virtual string Senha { get; set; }
 
         #endregion
