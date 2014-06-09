@@ -5,9 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="Contas">
+	Title="Contas" Width="500" Height="350">
 
     <Grid>
-        
+        <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="306,315,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="75" />
+        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="387,315,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
+        <GroupBox Header="Lançamento" Height="299" HorizontalAlignment="Left" Margin="10,10,0,0" Name="gpInfo" VerticalAlignment="Top" Width="476" Background="#FFD9E3EF">
+            <Grid>
+                <Label Content="Tipo" Height="28" HorizontalAlignment="Left" Margin="47,10,0,0" Name="lblTipo" VerticalAlignment="Top" />
+                <Label Content="Valor" Height="28" HorizontalAlignment="Left" Margin="47,53,0,0" Name="lblNome" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,53,227,0" Name="edtValor" VerticalAlignment="Top" Width="146" />
+                <DatePicker Height="25" HorizontalAlignment="Left" IsEnabled="True" Margin="322,94,0,0" Name="dataPagamento" VerticalAlignment="Top" Width="115" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="322,53,0,0" Name="dataVencimento" VerticalAlignment="Top" Width="115" />
+                <Label Content="Data Venc." Height="28" HorizontalAlignment="Left" Margin="250,53,0,0" Name="lblDataVencimento" VerticalAlignment="Top" />
+                <Label Content="Data Pag." Height="28" HorizontalAlignment="Left" Margin="257,94,0,0" Name="lblDataPagamento" VerticalAlignment="Top" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="91,13,0,0" Name="cbTipo" VerticalAlignment="Top" Width="146">
+                    <ComboBoxItem Content="A Pagar" />
+                    <ComboBoxItem Content="A Receber" />
+                </ComboBox>
+                <DatePicker Height="25" HorizontalAlignment="Left" IsEnabled="False" Margin="322,13,0,0" Name="dataInclusao" VerticalAlignment="Top" Width="115" />
+                <Label Content="Data Incl." Height="28" HorizontalAlignment="Left" Margin="250,10,0,0" Name="lblDataInclusao" VerticalAlignment="Top" />
+                <Label Content="Valor Pago" Height="28" HorizontalAlignment="Left" Margin="17,94,0,0" Name="label1" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,96,227,0" Name="textBox1" VerticalAlignment="Top" Width="146" />
+                <GroupBox Header="Observações" Height="132" HorizontalAlignment="Left" Margin="9,138,0,0" Name="dbObservacao" VerticalAlignment="Top" Width="447">
+                    <Grid>
+                        <TextBox Height="97" HorizontalAlignment="Right" Margin="0,6,6,0" Name="edtObservacao" VerticalAlignment="Top" Width="423" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Page>

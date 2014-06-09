@@ -51,7 +51,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Double-J-Design-Origami-Colored-Pencil-Blue-home.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -100,6 +101,7 @@
     <Compile Include="Model\Entities\Usuario.cs" />
     <Compile Include="Model\Entities\FuncionarioMapping.cs" />
     <Compile Include="Model\Entities\UsuarioMapping.cs" />
+    <Compile Include="Model\Enum\TipoCadastroEnum.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
     <Compile Include="Model\Repository\IRepositorio.cs" />
     <Compile Include="Model\Repository\Repositorio.cs" />
@@ -116,8 +118,14 @@
     <Compile Include="View\CadastroProduto.xaml.cs">
       <DependentUpon>CadastroProduto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CadastroUsuario.xaml.cs">
+      <DependentUpon>CadastroUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contas.xaml.cs">
       <DependentUpon>Contas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TelaPrincipal.xaml.cs">
       <DependentUpon>TelaPrincipal.xaml</DependentUpon>
@@ -146,7 +154,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CadastroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Index.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,9 +198,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Double-J-Design-Origami-Colored-Pencil-Blue-home.ico" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -228,6 +241,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icones\edit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="loginBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="loginBackground2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,6 +30,7 @@ namespace SisLar
         {
             InitializeComponent();
             repUsuario = new Repositorio<Usuario>();
+            edtUsuario.Focus();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -45,9 +46,10 @@ namespace SisLar
                 //var usuario = consulta.FirstOrDefault();
                 //if (!usuario.Senha.Equals(edtSenha.Password))
                 //    MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
-                
-                
-                var telaPrincipal = new TelaPrincipal();
+
+
+                var usuarioAcesso =new Usuario() { Nome = "Administrador" };
+                var telaPrincipal = new TelaPrincipal(usuarioAcesso);
                 telaPrincipal.Show();
                 this.Close();
             }

@@ -1,0 +1,55 @@
+﻿<Page x:Class="SisLar.View.Index"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Index" Width="660" Height="470" ShowsNavigationUI="False">
+
+    <Grid>
+        <GroupBox Header="GroupBox" Height="446" HorizontalAlignment="Left" Margin="12,12,0,0" Name="gbContainer" VerticalAlignment="Top" Width="636" Background="#FFD9E3EF">
+            <Grid>
+                <GroupBox Header="Resultados" Height="345" HorizontalAlignment="Left" Margin="6,72,0,0" Name="gbResultados" VerticalAlignment="Top" Width="613">
+                    <Grid>
+                        <DataGrid AutoGenerateColumns="True" Height="310" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="6,6,0,0" Name="GridAlunos" VerticalAlignment="Top" Width="590"></DataGrid>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Filtro" Height="62" HorizontalAlignment="Left" Margin="7,4,0,0" Name="gpFiltro" VerticalAlignment="Top" Width="485">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="493*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Pesquisar" Name="btnPesquisar" Width="75" Margin="392,9,3,5" />
+                        <ComboBox Height="23" HorizontalAlignment="Left" Margin="6,9,0,0" Name="cbFiltro" VerticalAlignment="Top" Width="123" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,9,84,0" Name="edtFiltro" VerticalAlignment="Top" Width="251" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Ações" Height="62" HorizontalAlignment="Left" Margin="495,4,0,0" Name="gpAcoes" VerticalAlignment="Top" Width="124" BorderBrush="#FFD5DFE5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="111*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button DataContext="{Binding}" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="btnInserir" VerticalAlignment="Top" Width="28" Click="btnInserir_Click">
+                            <StackPanel>
+                                <Image Source="/SisLar;component/Icones/add.png" />
+                            </StackPanel>
+                        </Button>
+                        <Button Height="28" HorizontalAlignment="Left" Margin="43,6,0,0" Name="btnEditar" VerticalAlignment="Top" Width="28">
+                            <StackPanel>
+                                <Image Source="/SisLar;component/Icones/pen.png" />
+                            </StackPanel>
+                        </Button>
+                        <Button Height="28" HorizontalAlignment="Right" Margin="0,6,4,0" Name="btnExcluir" VerticalAlignment="Top" Width="28">
+                            <StackPanel>
+                                <Image Source="/SisLar;component/Icones/delete.png" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

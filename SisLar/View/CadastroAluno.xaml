@@ -5,9 +5,28 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="CadastroAluno">
+	Title="Cadastro de alunos" Width="500" Height="300" Name="TelaCadastroAluno">
 
     <Grid>
-        
+        <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="309,265,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="75" />
+        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="390,265,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
+        <GroupBox Header="Aluno" Height="239" HorizontalAlignment="Left" Margin="12,12,0,0" Name="gpInfo" VerticalAlignment="Top" Width="476" Background="#FFD9E3EF">
+            <Grid>
+                <Label Content="Matrícula" Height="28" HorizontalAlignment="Left" Margin="28,8,0,0" Name="lblMatricula" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="93,13,0,0" Name="edtMatricula" VerticalAlignment="Top" Width="176" />
+                <Label Content="Nome" Height="28" HorizontalAlignment="Left" Margin="42,47,0,0" Name="lblNome" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,49,35,0" Name="edtNome" VerticalAlignment="Top" Width="338" />
+                <Label Content="Endereço" Height="28" HorizontalAlignment="Left" Margin="26,86,0,0" Name="lblEndereco" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="91,88,0,0" Name="edtEndereco" VerticalAlignment="Top" Width="338" />
+                <Label Content="RG" Height="28" HorizontalAlignment="Left" Margin="59,123,0,0" Name="lblRG" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,125,229,0" Name="edtRG" VerticalAlignment="Top" Width="144" />
+                <Label Content="Sexo" Height="28" HorizontalAlignment="Left" Margin="49,161,0,0" Name="lblSexo" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="314,164,0,0" Name="dataMatricula" VerticalAlignment="Top" Width="115" IsEnabled="False" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="314,123,0,0" Name="dataNascimento" VerticalAlignment="Top" Width="115" />
+                <Label Content="Data Nasc." Height="28" HorizontalAlignment="Left" Margin="242,123,0,0" Name="lblDataNascimento" VerticalAlignment="Top" />
+                <Label Content="Data Matr." Height="28" HorizontalAlignment="Left" Margin="242,161,0,0" Name="lblDataMatricula" VerticalAlignment="Top" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="93,164,0,0" Name="comboBox1" VerticalAlignment="Top" Width="142" />
+            </Grid>
+        </GroupBox>
     </Grid>
 </Page>

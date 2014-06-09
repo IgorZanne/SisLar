@@ -19,9 +19,16 @@ namespace SisLar.View
     /// </summary>
     public partial class CadastroProduto : Page
     {
-        public CadastroProduto()
+        private Frame frameTelaPrincipal;
+        public CadastroProduto(Frame frameTelaPrincipal)
         {
+            this.frameTelaPrincipal = frameTelaPrincipal;
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            frameTelaPrincipal.NavigationService.GoBack();
         }
     }
 }

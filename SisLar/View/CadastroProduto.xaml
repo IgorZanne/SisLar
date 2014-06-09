@@ -5,9 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="CadastroProduto">
+	Title="CadastroProduto" Width="500" Height="300">
 
     <Grid>
-        
+        <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="307,263,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="75" />
+        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="388,263,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
+        <GroupBox Header="Produto" Height="239" HorizontalAlignment="Left" Margin="10,10,0,0" Name="gpInfo" VerticalAlignment="Top" Width="476" Background="#FFD9E3EF">
+            <Grid>
+                <Label Content="Tipo" Height="28" HorizontalAlignment="Left" Margin="57,18,0,0" Name="lblTipo" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="98,20,0,0" Name="edtTipo" VerticalAlignment="Top" Width="336" />
+                <Label Content="Descrição" Height="28" HorizontalAlignment="Left" Margin="29,54,0,0" Name="lblDescricao" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,56,30,0" Name="edtNome" VerticalAlignment="Top" Width="338" />
+                <Label Content="Marca" Height="28" HorizontalAlignment="Left" Margin="47,93,0,0" Name="lblMarca" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="96,95,0,0" Name="edtMarca" VerticalAlignment="Top" Width="338" />
+                <Label Content="Unidade" Height="28" HorizontalAlignment="Left" Margin="36,129,0,0" Name="lblUnidade" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,132,224,0" Name="edtUnidade" VerticalAlignment="Top" Width="144" />
+                <Label Content="Quantidade" Height="28" HorizontalAlignment="Left" Margin="18,166,0,0" Name="lblQuantidade" VerticalAlignment="Top" />
+                <Label Content="Data Val." Height="28" HorizontalAlignment="Left" Margin="247,130,0,0" Name="lblDataNascimento" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="319,130,0,0" Name="dataValidade" VerticalAlignment="Top" Width="115" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,168,224,0" Name="edtQuantidade" VerticalAlignment="Top" Width="144" />
+            </Grid>
+        </GroupBox>
     </Grid>
 </Page>

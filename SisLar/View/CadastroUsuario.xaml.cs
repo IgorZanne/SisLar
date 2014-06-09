@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 namespace SisLar.View
 {
     /// <summary>
-    /// Interaction logic for CadastroFuncionario.xaml
+    /// Interaction logic for CadastroUsuario.xaml
     /// </summary>
-    public partial class CadastroFuncionario : Page
+    public partial class CadastroUsuario : Page
     {
         private Frame frameTelaPrincipal;
-        public CadastroFuncionario(Frame frameTelaPrincipal)
+        public CadastroUsuario(Frame frameTelaPrincipal)
         {
             this.frameTelaPrincipal = frameTelaPrincipal;
             InitializeComponent();

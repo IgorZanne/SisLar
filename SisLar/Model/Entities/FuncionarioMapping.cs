@@ -16,7 +16,7 @@ namespace SisLar.Model.Entities
             Id(x => x.Handle, "HANDLE")
                 .GeneratedBy.Assigned();
 
-            Map(x => x.Id, "ID");
+            Map(x => x.Codigo, "CODIGO");
 
             Map(x => x.DataNascimento, "DATANASCIMENTO");
 
