@@ -13,7 +13,7 @@ namespace SisLar.Model.Repository
 {
     public class Repositorio<T> : IRepositorio<T>
     {
-        public T Retorna(int handle)
+        public T Retorna(Int64 handle)
         {
             return NHibernateHelper.Session.Get<T>(handle);
         }

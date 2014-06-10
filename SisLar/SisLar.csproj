@@ -96,6 +96,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AutoMappingConfigurationHelper.cs" />
     <Compile Include="Model\Entities\Aluno.cs" />
     <Compile Include="Model\Entities\AlunoMapping.cs" />
     <Compile Include="Model\Entities\Funcionario.cs" />

@@ -16,6 +16,7 @@ using SisLar.Model;
 using SisLar.Model.Repository;
 using SisLar.Model.Entities;
 using SisLar.View;
+using System.Windows.Automation.Peers;
 
 namespace SisLar
 {
@@ -35,20 +36,26 @@ namespace SisLar
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //var sessionFactory = NHibernateHelper.SessionFactory;
+            var sessionFactory = NHibernateHelper.SessionFactory;
             try
             {
-                //var usuarios = repUsuario.RetornaTodos();
-                //var consulta = usuarios.Where(u => u.Login.ToUpper().Equals(edtUsuario.Text.ToUpper()));
-                //if (!consulta.Any())
-                //    MessageBox.Show("Usuário não encontrado!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                var consulta = repUsuario.Consulta(u => u.Login.ToUpper().Equals(edtUsuario.Text.ToUpper()));
+                if (!consulta.Any())
+                {
+                    MessageBox.Show("Usuário não encontrado!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                    this.edtUsuario.Focus();
+                    return;
+                }
 
-                //var usuario = consulta.FirstOrDefault();
-                //if (!usuario.Senha.Equals(edtSenha.Password))
-                //    MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                var usuario = consulta.FirstOrDefault();
+                if (!usuario.Senha.Equals(edtSenha.Password))
+                {
+                    MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                    this.edtSenha.Focus();
+                    return;
+                }
 
-
-                var usuarioAcesso =new Usuario() { Nome = "Administrador" };
+                var usuarioAcesso =new Usuario() { Nome = usuario.Nome };
                 var telaPrincipal = new TelaPrincipal(usuarioAcesso);
                 telaPrincipal.Show();
                 this.Close();
@@ -56,14 +63,34 @@ namespace SisLar
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
-                //sessionFactory.Dispose();
-                //sessionFactory.Close();
+                sessionFactory.Dispose();
+                sessionFactory.Close();
             }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void edtUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TraversalRequest request = new TraversalRequest(FocusNavigationDirection.Next);
+                request.Wrapped = true;
+                ((TextBox)sender).MoveFocus(request);
+            }
+        }
+
+        private void edtSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TraversalRequest request = new TraversalRequest(FocusNavigationDirection.Next);
+                request.Wrapped = true;
+                ((PasswordBox)sender).MoveFocus(request);
+            }
         }
     }
 }

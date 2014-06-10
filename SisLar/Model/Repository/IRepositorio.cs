@@ -8,7 +8,7 @@ namespace SisLar.Model.Repository
 {
     public interface IRepositorio<T>
     {
-        T Retorna(int handle);
+        T Retorna(Int64 handle);
 
         IQueryable<T> RetornaTodos();
 

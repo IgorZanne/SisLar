@@ -5,9 +5,9 @@
     <Grid Height="143" Name="grid1" Width="265">
         <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="40,85,0,0" Name="btnLogin" VerticalAlignment="Top" Width="75" Click="btnLogin_Click" />
         <Button Content="Cancelar" Height="23" HorizontalAlignment="Right" Margin="0,85,59,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="80,18,0,0" Name="edtUsuario" VerticalAlignment="Top" Width="138" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="80,18,0,0" Name="edtUsuario" VerticalAlignment="Top" Width="138" KeyUp="edtUsuario_KeyUp" />
         <Label Content="Usuário" HorizontalAlignment="Left" Margin="8,17,0,102" Name="lblUsuario" HorizontalContentAlignment="Right" Width="69" FontWeight="Bold" />
         <Label Content="Senha" Height="28" HorizontalAlignment="Left" Margin="8,42,0,0" Name="lblSenha" VerticalAlignment="Top" Width="69" HorizontalContentAlignment="Right" FontWeight="Bold" />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="80,47,0,0" Name="edtSenha" VerticalAlignment="Top" Width="138" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="80,47,0,0" Name="edtSenha" VerticalAlignment="Top" Width="138" KeyUp="edtSenha_KeyUp" />
     </Grid>
 </Window>

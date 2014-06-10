@@ -12,7 +12,7 @@
             <Grid>
                 <GroupBox Header="Resultados" Height="345" HorizontalAlignment="Left" Margin="6,72,0,0" Name="gbResultados" VerticalAlignment="Top" Width="613">
                     <Grid>
-                        <DataGrid AutoGenerateColumns="True" Height="310" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="6,6,0,0" Name="GridAlunos" VerticalAlignment="Top" Width="590"></DataGrid>
+                        <DataGrid AutoGenerateColumns="True" Height="310" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="6,6,0,0" Name="GridResultados" VerticalAlignment="Top" Width="590" AutoGeneratingColumn="GridResultados_AutoGeneratingColumn"></DataGrid>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Filtro" Height="62" HorizontalAlignment="Left" Margin="7,4,0,0" Name="gpFiltro" VerticalAlignment="Top" Width="485">

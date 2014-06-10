@@ -56,7 +56,6 @@ namespace SisLar.Model
                 .Database(CreateDbConfig())
                 .Mappings(m => m.AutoMappings.Add(CreateMappings()))
                 .ExposeConfiguration(config => new SchemaExport(config).Execute(true, false, true))
-                //.ExposeConfiguration(config => new SchemaUpdate(config).Execute(false, true))
                 .ExposeConfiguration(x => x.SetProperty("connection.release_mode", "on_close"))
                 .BuildSessionFactory();
         }
@@ -82,8 +81,7 @@ namespace SisLar.Model
         private static AutoPersistenceModel CreateMappings()
         {
             return AutoMap
-                .Assembly(System.Reflection.Assembly.GetCallingAssembly())
-                .Where(t => t.Namespace == "SisLar.Model.Entities");
+                .Assemblies(new AutoMappingConfigurationHelper(), System.Reflection.Assembly.GetCallingAssembly());
         }
     }
 }

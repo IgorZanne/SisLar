@@ -26,7 +26,7 @@ namespace SisLar.Model.Entities
         public virtual string DataVencimento { get; set; }
 
         [DisplayName("Observações")]
-        public virtual string Observacoes { get; set; }
+        public virtual string Observacao { get; set; }
 
         [DisplayName("Valor pago")]
         public virtual string ValorPago { get; set; }

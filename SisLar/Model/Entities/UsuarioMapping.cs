@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentNHibernate.Mapping;
+using FluentNHibernate;
 
 namespace SisLar.Model.Entities
 {
@@ -10,9 +11,8 @@ namespace SisLar.Model.Entities
     {
         public UsuarioMapping()
         {
-            Table("SIS_USUARIO");
-            SchemaAction.None();
-            Id(x => x.Handle, "HANDLE").Access.ReadOnly()
+            Table("Usuario");
+            Id(x => x.Handle, "HANDLE")
                 .GeneratedBy.Identity();
 
             Map(x => x.Codigo, "CODIGO");

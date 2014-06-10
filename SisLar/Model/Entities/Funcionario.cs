@@ -15,6 +15,8 @@ namespace SisLar.Model.Entities
 
         #region ::: Propriedades públicas
 
+        public virtual long Handle { get; set; }
+
         [DisplayName("Nome")]
         public virtual string Nome { get; set; }
 
@@ -47,8 +49,6 @@ namespace SisLar.Model.Entities
 
         [DisplayName("Carteira")]
         public virtual string Carteira { get; set; }
-
-        public virtual long Handle { get; set; }
 
         #endregion
     }

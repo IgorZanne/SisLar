@@ -14,7 +14,7 @@ namespace SisLar.Model.Entities
             Table("Funcionario");
 
             Id(x => x.Handle, "HANDLE")
-                .GeneratedBy.Assigned();
+                .GeneratedBy.Identity();
 
             Map(x => x.Codigo, "CODIGO");
 
@@ -33,6 +33,10 @@ namespace SisLar.Model.Entities
             Map(x => x.Celular, "CELULAR");
 
             Map(x => x.Carteira, "CARTEIRA");
+
+            Map(x => x.Nome, "NOME");
+
+            Map(x => x.Sexo, "SEXO");
 
         }
     }

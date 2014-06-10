@@ -13,7 +13,7 @@ namespace SisLar.Model.Entities
             Table("Lancamento");
 
             Id(x => x.Handle, "HANDLE")
-                    .GeneratedBy.Assigned();
+                    .GeneratedBy.Identity();
 
             Map(x => x.DataInclusao, "DATAINCLUSAO");
 
@@ -21,7 +21,7 @@ namespace SisLar.Model.Entities
 
             Map(x => x.DataVencimento, "DATAVENCIMENTO");
 
-            Map(x => x.Observacoes, "OBSERVACOES");
+            Map(x => x.Observacao, "OBSERVACAO");
 
             Map(x => x.Tipo, "TIPO");
 

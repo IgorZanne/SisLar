@@ -14,7 +14,7 @@ namespace SisLar.Model.Entities
             Table("Produto");
 
             Id(x => x.Handle, "HANDLE")
-                .GeneratedBy.Assigned();
+                .GeneratedBy.Identity();
 
             Map(x => x.Descricao, "DESCRICAO");
 

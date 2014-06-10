@@ -14,7 +14,7 @@ namespace SisLar.Model.Entities
             Table("Aluno");
 
             Id(x => x.Handle, "HANDLE")
-                .GeneratedBy.Assigned();
+                .GeneratedBy.Identity();
 
             Map(x => x.Matricula, "MATRICULA");
 
@@ -24,7 +24,7 @@ namespace SisLar.Model.Entities
 
             Map(x => x.Rg, "RG");
 
-            Map(x => x.Sexo, "Sexo");
+            Map(x => x.Sexo, "SEXO");
 
             Map(x => x.DataMatricula, "DATAMATRICULA");
 
