@@ -7,7 +7,7 @@ namespace SisLar.Model.Enum
 {
     public enum TipoLancamentoEnum
     {
-        Pagar,
-        Receber
+        Pagar = 0,
+        Receber = 1
     }
 }

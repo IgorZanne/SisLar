@@ -3,30 +3,32 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:localModel="clr-namespace:SisLar.Model"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="Index" Width="660" Height="470" ShowsNavigationUI="False">
-
+	Title="Index" Width="880" Height="580" ShowsNavigationUI="False">
     <Grid>
-        <GroupBox Header="GroupBox" Height="446" HorizontalAlignment="Left" Margin="12,12,0,0" Name="gbContainer" VerticalAlignment="Top" Width="636" Background="#FFD9E3EF">
+        <GroupBox Header="" Height="568" HorizontalAlignment="Left" Name="gbContainer" VerticalAlignment="Top" Width="868" Background="#FFD9E3EF" Margin="12,2,0,0">
             <Grid>
-                <GroupBox Header="Resultados" Height="345" HorizontalAlignment="Left" Margin="6,72,0,0" Name="gbResultados" VerticalAlignment="Top" Width="613">
+                <GroupBox Header="Resultados" Height="467" HorizontalAlignment="Left" Margin="6,72,0,0" Name="gbResultados" VerticalAlignment="Top" Width="844">
                     <Grid>
-                        <DataGrid AutoGenerateColumns="True" Height="310" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="6,6,0,0" Name="GridResultados" VerticalAlignment="Top" Width="590" AutoGeneratingColumn="GridResultados_AutoGeneratingColumn"></DataGrid>
+                        <DataGrid AutoGenerateColumns="True" Height="409" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="6,6,0,0" Name="GridResultados" VerticalAlignment="Top" Width="819" AutoGeneratingColumn="GridResultados_AutoGeneratingColumn" IsReadOnly="True" MouseDoubleClick="GridResultados_MouseDoubleClick"></DataGrid>
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="6,415,0,0" Name="edtStatusBar" VerticalAlignment="Top" Width="819" IsEnabled="False"/>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Filtro" Height="62" HorizontalAlignment="Left" Margin="7,4,0,0" Name="gpFiltro" VerticalAlignment="Top" Width="485">
+                <GroupBox Header="Filtro" Height="62" HorizontalAlignment="Left" Margin="7,4,0,0" Name="gpFiltro" VerticalAlignment="Top" Width="686">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="493*" />
                             <ColumnDefinition Width="3*" />
                         </Grid.ColumnDefinitions>
-                        <Button Content="Pesquisar" Name="btnPesquisar" Width="75" Margin="392,9,3,5" />
-                        <ComboBox Height="23" HorizontalAlignment="Left" Margin="6,9,0,0" Name="cbFiltro" VerticalAlignment="Top" Width="123" />
-                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,9,84,0" Name="edtFiltro" VerticalAlignment="Top" Width="251" />
+                        <ComboBox Height="23" HorizontalAlignment="Left" Margin="6,8,0,0" Name="cbFiltro" VerticalAlignment="Top" Width="197" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,8,91,0" Name="edtFiltro" VerticalAlignment="Top" Width="369" KeyDown="edtFiltro_KeyDown" />
+                        <Button Content="Pesquisar" Name="btnPesquisar" Margin="585,7,2,7" Click="btnPesquisar_Click" />
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Ações" Height="62" HorizontalAlignment="Left" Margin="495,4,0,0" Name="gpAcoes" VerticalAlignment="Top" Width="124" BorderBrush="#FFD5DFE5">
+                <GroupBox Header="Ações" Height="62" HorizontalAlignment="Left" Margin="699,4,0,0" Name="gpAcoes" VerticalAlignment="Top" Width="151" BorderBrush="#FFD5DFE5">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="111*" />
@@ -37,7 +39,7 @@
                                 <Image Source="/SisLar;component/Icones/add.png" />
                             </StackPanel>
                         </Button>
-                        <Button Height="28" HorizontalAlignment="Left" Margin="43,6,0,0" Name="btnEditar" VerticalAlignment="Top" Width="28" Click="btnEditar_Click">
+                        <Button Height="28" HorizontalAlignment="Left" Margin="56,6,0,0" Name="btnEditar" VerticalAlignment="Top" Width="28" Click="btnEditar_Click">
                             <StackPanel>
                                 <Image Source="/SisLar;component/Icones/pen.png" />
                             </StackPanel>

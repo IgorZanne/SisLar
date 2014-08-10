@@ -25,6 +25,8 @@ namespace SisLar.Model.Entities
             Map(x => x.Tipo, "TIPO");
 
             Map(x => x.Unidade, "UNIDADE");
+
+            Map(x => x.DataValidade, "DATAVALIDADE").Nullable();
         }
     }
 }

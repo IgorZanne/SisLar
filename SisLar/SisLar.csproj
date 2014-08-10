@@ -76,6 +76,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\packages\MvvmLightLibs.4.3.31.1\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -90,6 +91,24 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -97,28 +116,42 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AutoMappingConfigurationHelper.cs" />
+    <Compile Include="Model\BooleanConvention.cs" />
+    <Compile Include="Model\BooleanConverter.cs" />
+    <Compile Include="Model\EntidadeHelper.cs" />
     <Compile Include="Model\Entities\Aluno.cs" />
-    <Compile Include="Model\Entities\AlunoMapping.cs" />
+    <Compile Include="Model\Entities\Anexo.cs" />
+    <Compile Include="Model\EnumConvention.cs" />
+    <Compile Include="Model\Enum\PeriodoEnum.cs" />
+    <Compile Include="Model\Enum\TipoResponsavelEnum.cs" />
+    <Compile Include="Model\Mappings\AlunoMapping.cs" />
     <Compile Include="Model\Entities\Funcionario.cs" />
     <Compile Include="Model\Entities\Lancamento.cs" />
-    <Compile Include="Model\Entities\LancamentoMapping.cs" />
+    <Compile Include="Model\Mappings\AnexoMapping.cs" />
+    <Compile Include="Model\Mappings\LancamentoMapping.cs" />
     <Compile Include="Model\Entities\Produto.cs" />
-    <Compile Include="Model\Entities\ProdutoMapping.cs" />
+    <Compile Include="Model\Mappings\ProdutoMapping.cs" />
     <Compile Include="Model\Entities\Usuario.cs" />
-    <Compile Include="Model\Entities\FuncionarioMapping.cs" />
-    <Compile Include="Model\Entities\UsuarioMapping.cs" />
+    <Compile Include="Model\Mappings\FuncionarioMapping.cs" />
+    <Compile Include="Model\Mappings\UsuarioMapping.cs" />
     <Compile Include="Model\Enum\SexoEnum.cs" />
     <Compile Include="Model\Enum\TipoCadastroEnum.cs" />
     <Compile Include="Model\Enum\TipoLancamentoEnum.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
+    <Compile Include="Model\QueryableExtensions.cs" />
     <Compile Include="Model\Repository\IRepositorio.cs" />
     <Compile Include="Model\Repository\Repositorio.cs" />
+    <Compile Include="Model\Repository\SqlHelper.cs" />
+    <Compile Include="Model\TipoResponsavelEnumValueConverter.cs" />
     <Compile Include="ViewModel\CadastroFuncionarioViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelFactory.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\CadastroAluno.xaml.cs">
       <DependentUpon>CadastroAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CadastroAnexo.xaml.cs">
+      <DependentUpon>CadastroAnexo.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CadastroFuncionario.xaml.cs">
       <DependentUpon>CadastroFuncionario.xaml</DependentUpon>
@@ -151,6 +184,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\CadastroAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CadastroAnexo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,9 +247,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Icones\add.png" />
   </ItemGroup>

@@ -20,11 +20,13 @@ namespace SisLar.Model.Entities
         public virtual string Marca { get; set; }
 
         [DisplayName("Unidade")]
-        public virtual DateTime Unidade { get; set; }
+        public virtual string Unidade { get; set; }
 
         [DisplayName("Quantidade")]
-        public virtual string Quantidade { get; set; }
+        public virtual Double Quantidade { get; set; }
 
-        //TODO: Criar campo de data de validade
+        [DisplayName("Data de validade")]
+        public virtual DateTime? DataValidade { get; set; }
+
     }
 }

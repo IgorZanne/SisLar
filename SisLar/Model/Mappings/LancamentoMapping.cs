@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentNHibernate.Mapping;
+using SisLar.Model.Enum;
 
 namespace SisLar.Model.Entities
 {
@@ -23,7 +24,7 @@ namespace SisLar.Model.Entities
 
             Map(x => x.Observacao, "OBSERVACAO");
 
-            Map(x => x.Tipo, "TIPO");
+            Map(x => x.Tipo, "TIPO").CustomType(typeof(TipoLancamentoEnum)).Nullable();
 
             Map(x => x.Valor, "VALOR");
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using SisLar.Model.Enum;
 
 namespace SisLar.Model.Entities
 {
@@ -11,24 +12,24 @@ namespace SisLar.Model.Entities
         public virtual long Handle { get; set; }
 
         [DisplayName("Tipo")]
-        public virtual string Tipo { get; set; }
+        public virtual TipoLancamentoEnum Tipo { get; set; }
 
         [DisplayName("Valor")]
-        public virtual string Valor { get; set; }
+        public virtual Double Valor { get; set; }
 
         [DisplayName("Data de pagamento")]
-        public virtual string DataPagamento { get; set; }
+        public virtual DateTime? DataPagamento { get; set; }
 
         [DisplayName("Data de inclusão")]
         public virtual DateTime DataInclusao { get; set; }
 
         [DisplayName("Data de vencimento")]
-        public virtual string DataVencimento { get; set; }
+        public virtual DateTime? DataVencimento { get; set; }
 
         [DisplayName("Observações")]
         public virtual string Observacao { get; set; }
 
         [DisplayName("Valor pago")]
-        public virtual string ValorPago { get; set; }
+        public virtual Double ValorPago { get; set; }
     }
 }

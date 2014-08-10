@@ -16,6 +16,7 @@ namespace SisLar.Model
         {
             // whitelisted objects to map
             typeof(Aluno), 
+            typeof(Anexo), 
             typeof(Funcionario), 
             typeof(Lancamento), 
             typeof(Produto), 

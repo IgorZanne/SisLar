@@ -54,7 +54,9 @@ namespace SisLar.Model
         {
             _sessionFactory = Fluently.Configure()
                 .Database(CreateDbConfig())
-                .Mappings(m => m.AutoMappings.Add(CreateMappings()))
+                .Mappings(m => m.AutoMappings.Add(CreateMappings()
+                    .Conventions.Add(new BooleanConvention())
+                    .Conventions.Add<EnumConvention>()))
                 .ExposeConfiguration(config => new SchemaExport(config).Execute(true, false, true))
                 .ExposeConfiguration(x => x.SetProperty("connection.release_mode", "on_close"))
                 .BuildSessionFactory();
@@ -75,6 +77,7 @@ namespace SisLar.Model
                     .Username( "sa" )
                     .Password( "admin1" ))
                 .DefaultSchema("dbo")
+                .QuerySubstitutions("true 1, false 0, yes 'Y', no 'N'")
                 .ShowSql();
         }
 

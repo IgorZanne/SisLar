@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using SisLar.Model.Enum;
 
 namespace SisLar.Model.Entities
 {
@@ -45,10 +46,13 @@ namespace SisLar.Model.Entities
         public virtual string Celular { get; set; }
 
         [DisplayName("Sexo")]
-        public virtual string Sexo { get; set; }
+        public virtual SexoEnum? Sexo { get; set; }
 
         [DisplayName("Carteira")]
         public virtual string Carteira { get; set; }
+
+        [DisplayName("Bairro")]
+        public virtual string Bairro { get; set; }
 
         #endregion
     }

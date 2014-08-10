@@ -3,33 +3,41 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="CadastroFuncionario" Width="500" Height="350">
+	Title="CadastroFuncionario" Width="880" Height="580" Loaded="Page_Loaded">
 
     <Grid>
-        <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="311,315,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="75" />
-        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="392,315,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
-        <GroupBox Header="Funcionário" Height="299" HorizontalAlignment="Left" Margin="10,10,0,0" Name="gpInfo" VerticalAlignment="Top" Width="476" Background="#FFD9E3EF">
+        <GroupBox Header="Funcionário" Height="287" HorizontalAlignment="Left" Margin="19,10,0,0" Name="gpInfo" VerticalAlignment="Top" Width="848" Background="#FFD9E3EF">
             <Grid>
                 <Label Content="Código" Height="28" HorizontalAlignment="Left" Margin="33,8,0,0" Name="lblCodigo" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="93,13,0,0" Name="edtMatricula" VerticalAlignment="Top" Width="176" />
-                <Label Content="Nome" Height="28" HorizontalAlignment="Left" Margin="39,47,0,0" Name="lblNome" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,49,35,0" Name="edtNome" VerticalAlignment="Top" Width="338" />
-                <Label Content="Endereço" Height="28" HorizontalAlignment="Left" Margin="23,84,0,0" Name="lblEndereco" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="91,86,0,0" Name="edtEndereco" VerticalAlignment="Top" Width="338" />
-                <Label Content="Telefone" Height="28" HorizontalAlignment="Left" Margin="26,159,0,0" Name="lblTelefone" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,161,230,0" Name="edtTelefone" VerticalAlignment="Top" Width="144" />
-                <Label Content="Celular" Height="28" HorizontalAlignment="Left" Margin="35,200,0,0" Name="lblCelular" VerticalAlignment="Top" />
-                <DatePicker Height="25" HorizontalAlignment="Right" IsEnabled="True" Margin="0,200,36,0" Name="dataMatricula" VerticalAlignment="Top" Width="115" />
-                <DatePicker Height="25" HorizontalAlignment="Left" Margin="313,159,0,0" Name="dataNascimento" VerticalAlignment="Top" Width="115" />
-                <Label Content="Data Adm." Height="28" HorizontalAlignment="Left" Margin="241,159,0,0" Name="lblDataAdmissao" VerticalAlignment="Top" />
-                <Label Content="Data Dem." Height="28" HorizontalAlignment="Left" Margin="241,197,0,0" Name="lblDataDemissao" VerticalAlignment="Top" />
-                <Label Content="Setor" Height="28" HorizontalAlignment="Left" Margin="44,121,0,0" Name="lblSetor" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="91,123,0,0" Name="edtSetor" VerticalAlignment="Top" Width="338" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,197,230,0" Name="edtCelular" VerticalAlignment="Top" Width="144" />
-                <Label Content="Carteira" Height="28" HorizontalAlignment="Left" Margin="31,236,0,0" Name="lblCarteira" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="90,238,0,0" Name="edtCarteira" VerticalAlignment="Top" Width="338" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="93,13,0,0" Name="edtCodigo" VerticalAlignment="Top" Width="176" Text="{Binding Codigo}" />
+                <Label Content="Nome" Height="28" HorizontalAlignment="Left" Margin="39,41,0,0" Name="lblNome" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="93,43,0,0" Name="edtNome" VerticalAlignment="Top" Width="727" Text="{Binding Nome}" />
+                <Label Content="Endereço" Height="28" HorizontalAlignment="Left" Margin="23,73,0,0" Name="lblEndereco" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="92,75,0,0" Name="edtEndereco" VerticalAlignment="Top" Width="338" Text="{Binding Endereco}" />
+                <Label Content="Bairro" Height="28" HorizontalAlignment="Left" Margin="460,73,0,0" Name="lblBairro" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="507,75,0,0" Name="edtBairro" VerticalAlignment="Top" Width="313" Text="{Binding Bairro}" />
+                <Label Content="Setor" Height="28" HorizontalAlignment="Left" Margin="44,105,0,0" Name="lblSetor" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="91,107,0,0" Name="edtSetor" VerticalAlignment="Top" Width="729" Text="{Binding Setor}" />
+                <Label Content="Data Nasc." Height="28" HorizontalAlignment="Left" Margin="21,138,0,0" Name="lblDataNascimento" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" IsEnabled="True" Margin="93,140,0,0" Name="dataNascimento" VerticalAlignment="Top" Width="115" SelectedDate="{Binding DataNascimento}" />
+                <Label Content="Telefone" Height="28" HorizontalAlignment="Left" Margin="221,138,0,0" Name="lblTelefone" VerticalAlignment="Top" />
+                <xctk:MaskedTextBox Mask="(00)0000-0000" Height="23" HorizontalAlignment="Left" Margin="286,140,0,0" Name="edtTelefone" VerticalAlignment="Top" Width="113" Text="{Binding Telefone, StringFormat=\{0:(00)0000-0000\}}" />
+                <Label Content="Data Adm." Height="28" HorizontalAlignment="Left" Margin="418,139,0,0" Name="lblDataAdmissao" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="490,141,0,0" Name="dataAdmissao" VerticalAlignment="Top" Width="125" SelectedDate="{Binding DataAdmissao}" />
+                <Label Content="Data Dem." Height="28" HorizontalAlignment="Left" Margin="621,140,0,0" Name="lblDataDemissao" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" IsEnabled="True" Margin="693,141,0,0" Name="dataDemissao" VerticalAlignment="Top" Width="125" SelectedDate="{Binding DataDemissao}" />
+                <Label Content="Sexo" Height="28" HorizontalAlignment="Left" Margin="46,173,0,0" Name="lblSexo" VerticalAlignment="Top" />
+                <ComboBox Height="23" Margin="93,176,0,0" Name="cbSexo" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" SelectedValue="{Binding Sexo}"/>
+                <Label Content="Celular" Height="28" HorizontalAlignment="Left" Margin="231,173,0,0" Name="lblCelular" VerticalAlignment="Top" />
+                <xctk:MaskedTextBox Mask="(00)0000-0000" Height="23" HorizontalAlignment="Left" Margin="286,175,0,0" Name="edtCelular" VerticalAlignment="Top" Width="114" Text="{Binding Celular, StringFormat=\{0:(00)0000-0000\}}" />
+                <Label Content="Carteira" Height="28" HorizontalAlignment="Left" Margin="421,174,0,0" Name="lblCarteira" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="480,176,0,0" Name="edtCarteira" VerticalAlignment="Top" Width="338" Text="{Binding Carteira}" />
+                <Border BorderBrush="Silver" BorderThickness="1" Height="43" HorizontalAlignment="Left" Margin="0,222,0,0" Name="border1" VerticalAlignment="Top" Width="836" />
+                <Button Content="Confirmar" Height="30" HorizontalAlignment="Left" Margin="288,229,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="109" Click="btnConfirmar_Click" />
+                <Button Content="Cancelar" Height="30" HorizontalAlignment="Left" Margin="415,229,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="109" Click="btnCancelar_Click" />
             </Grid>
         </GroupBox>
     </Grid>

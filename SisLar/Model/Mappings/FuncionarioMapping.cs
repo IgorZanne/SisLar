@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentNHibernate.Mapping;
+using SisLar.Model.Enum;
 
 namespace SisLar.Model.Entities
 {
@@ -36,8 +37,9 @@ namespace SisLar.Model.Entities
 
             Map(x => x.Nome, "NOME");
 
-            Map(x => x.Sexo, "SEXO");
+            Map(x => x.Sexo, "SEXO").CustomType(typeof(SexoEnum)).Nullable();
 
+            Map(x => x.Bairro, "BAIRRO");
         }
     }
 }

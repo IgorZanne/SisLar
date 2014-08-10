@@ -5,28 +5,29 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="Cadastro de usuário" Width="500" Height="300">
+	Title="Cadastro de usuário" Width="880" Height="580" Loaded="Page_Loaded">
         <Grid>
-        <GroupBox Header="Usuário" Height="259" HorizontalAlignment="Left" Name="gbUsuario" VerticalAlignment="Top" Width="500" Background="#FFD9E3EF">
+        <GroupBox Header="Usuário" Height="318" HorizontalAlignment="Left" Name="gbUsuario" VerticalAlignment="Top" Width="843" Background="#FFD9E3EF" Margin="17,7,0,0">
             <Grid>
-                <GroupBox Header="Informações" Height="120" HorizontalAlignment="Left" Margin="7,3,0,0" Name="gbInfo" VerticalAlignment="Top" Width="475">
+                <GroupBox Header="Informações" Height="120" HorizontalAlignment="Left" Margin="7,3,0,0" Name="gbInfo" VerticalAlignment="Top" Width="818">
                     <Grid>
-                        <Label Content="Código" Height="28" HorizontalAlignment="Left" Margin="101,22,0,0" Name="label1" VerticalAlignment="Top" />
-                        <TextBox Height="23" HorizontalAlignment="Left" Margin="156,24,0,0" Name="edtCodigo" VerticalAlignment="Top" Width="176" IsEnabled="False" Text="{Binding }" />
-                        <Label Content="Nome" Height="28" HorizontalAlignment="Left" Margin="107,57,0,0" Name="label2" VerticalAlignment="Top" />
-                        <TextBox Height="23" HorizontalAlignment="Left" Margin="156,61,0,0" Name="edtNome" VerticalAlignment="Top" Width="176" />
+                        <Label Content="Código" Height="28" HorizontalAlignment="Left" Margin="14,16,0,0" Name="label1" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="69,18,0,0" Name="edtCodigo" VerticalAlignment="Top" Width="724" IsEnabled="False" Text="{Binding Codigo}"/>
+                        <Label Content="Nome" Height="28" HorizontalAlignment="Left" Margin="20,51,0,0" Name="label2" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="69,55,0,0" Name="edtNome" VerticalAlignment="Top" Width="724" Text="{Binding Nome}"/>
                     </Grid>
                 </GroupBox>
-            </Grid>
-        </GroupBox>
-        <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="310,265,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="75" Click="btnConfirmar_Click" />
-        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="391,265,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
-        <GroupBox Header="Dados para acesso" Height="105" HorizontalAlignment="Left" Margin="12,143,0,0" Name="gbAcesso" VerticalAlignment="Top" Width="476">
-            <Grid>
-                <Label Content="Login" Height="28" HorizontalAlignment="Left" Margin="111,12,0,0" Name="lblLogin" VerticalAlignment="Top" />
-                <Label Content="Senha" Height="28" HorizontalAlignment="Left" Margin="108,44,0,0" Name="lblSenha" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="156,14,0,0" Name="edtLogin" VerticalAlignment="Top" Width="176" />
-                <PasswordBox Height="23" HorizontalAlignment="Left" Margin="156,46,0,0" Name="edtSenha" VerticalAlignment="Top" Width="176" />
+                <GroupBox Header="Dados para acesso" Height="105" HorizontalAlignment="Left" Margin="7,129,0,0" Name="gbAcesso" VerticalAlignment="Top" Width="818">
+                    <Grid>
+                        <Label Content="Login" Height="28" HorizontalAlignment="Left" Margin="24,11,0,0" Name="lblLogin" VerticalAlignment="Top" />
+                        <Label Content="Senha" Height="28" HorizontalAlignment="Left" Margin="21,43,0,0" Name="lblSenha" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="69,13,0,0" Name="edtLogin" VerticalAlignment="Top" Width="724" Text="{Binding Login}" />
+                        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="69,45,0,0" Name="edtSenha" VerticalAlignment="Top" Width="724" />
+                    </Grid>
+                </GroupBox>
+                <Border BorderBrush="Silver" BorderThickness="1" Height="43" HorizontalAlignment="Left" Margin="0,251,0,0" Name="border1" VerticalAlignment="Top" Width="831" />
+                <Button Content="Confirmar" Height="30" HorizontalAlignment="Left" Margin="289,257,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="109" Click="btnConfirmar_Click" />
+                <Button Content="Cancelar" Height="30" HorizontalAlignment="Left" Margin="419,257,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="109" Click="btnCancelar_Click" />
             </Grid>
         </GroupBox>
     </Grid>

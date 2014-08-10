@@ -24,28 +24,18 @@ namespace SisLar.View
     {
         private Frame frameTelaPrincipal;
         private IRepositorio<Usuario> repUsuario;
+        private Usuario UsuarioAtual;
+        private Index TelaIndex;
 
-        public CadastroUsuario(Frame frameTelaPrincipal)
+        public CadastroUsuario(Frame frameTelaPrincipal, Usuario UsuarioEditar)
         {
             this.frameTelaPrincipal = frameTelaPrincipal;
             this.repUsuario = new Repositorio<Usuario>();
+            this.UsuarioAtual = UsuarioEditar;
             InitializeComponent();
-        }
 
-        private void PreencherFormulario(Usuario usuario)
-        {
-            edtCodigo.Text = usuario.Codigo.ToString();
-            edtLogin.Text = usuario.Login;
-            edtNome.Text = usuario.Nome;
-            edtSenha.Password = usuario.Senha;
-        }
-
-        private void CarregarDoFormulario()
-        {
-            //UsuarioEditando.Value = Convert.ToInt32(edtCodigo.Text);
-            //edtLogin.Text = usuario.Login;
-            //edtNome.Text = usuario.Nome;
-            //edtSenha.Password = usuario.Senha;
+            this.DataContext = this.UsuarioAtual;
+            this.TelaIndex = new Index(this.frameTelaPrincipal, TipoCadastroEnum.Usuario);
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -56,14 +46,18 @@ namespace SisLar.View
         private void btnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             #region Verificar se usuário já existe
-            var jaExiste = repUsuario
-                .Consulta(u => u.Login.ToUpper().Equals(edtLogin.Text.ToUpper()))
-                .Any();
-            if (jaExiste)
+            if (UsuarioAtual.Handle > 0)
             {
-                MessageBox.Show("Já existe usuário com o mesmo login", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.edtLogin.Focus();
-                return;
+                var jaExiste = repUsuario
+                    .Consulta(u => u.Handle != UsuarioAtual.Handle
+                                && u.Login.ToUpper().Equals(edtLogin.Text.ToUpper()))
+                    .Any();
+                if (jaExiste)
+                {
+                    MessageBox.Show("Já existe usuário com o mesmo login", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                    this.edtLogin.Focus();
+                    return;
+                }
             }
             #endregion
 
@@ -74,23 +68,31 @@ namespace SisLar.View
                 this.edtSenha.Focus();
                 return;
             }
+            else
+            {
+                this.UsuarioAtual.Senha = edtSenha.Password;
+            }
             #endregion
 
-            var novo = new Usuario()
+            if (UsuarioAtual.Handle == 0)
             {
-                Codigo = Convert.ToInt32(edtCodigo.Text),
-                Login = edtLogin.Text,
-                Nome = edtNome.Text,
-                Senha = edtSenha.Password
-            };
-            repUsuario.Inclui(novo);
-            MessageBox.Show("Usuário inserido com sucesso", "Erro", MessageBoxButton.OK, MessageBoxImage.Information);
+                repUsuario.Inclui(UsuarioAtual);
+                this.TelaIndex.AlteraTextoStatusBar("Usuário inserido com sucesso!");
+            }
+            else
+            {
+                repUsuario.Altera(UsuarioAtual);
+                this.TelaIndex.AlteraTextoStatusBar("Usuário alterado com sucesso!");
+            }
 
             #region Retornar ao index
-            var window = Window.GetWindow(this);
-            var pageIndex = new Index(frameTelaPrincipal, TipoCadastroEnum.Usuario);
-            frameTelaPrincipal.Navigate(pageIndex);
+            frameTelaPrincipal.Navigate(this.TelaIndex);
             #endregion
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            edtNome.Focus();
         }
     }
 }

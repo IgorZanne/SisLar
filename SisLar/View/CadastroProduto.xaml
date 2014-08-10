@@ -5,25 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="CadastroProduto" Width="500" Height="300">
+	Title="CadastroProduto" Width="880" Height="580" Loaded="Page_Loaded">
 
     <Grid>
-        <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="307,263,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="75" />
-        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="388,263,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="75" Click="btnCancelar_Click" />
-        <GroupBox Header="Produto" Height="239" HorizontalAlignment="Left" Margin="10,10,0,0" Name="gpInfo" VerticalAlignment="Top" Width="476" Background="#FFD9E3EF">
+        <GroupBox Header="Produto" Height="287" HorizontalAlignment="Left" Margin="10,10,0,0" Name="gpInfo" VerticalAlignment="Top" Width="848" Background="#FFD9E3EF">
             <Grid>
-                <Label Content="Tipo" Height="28" HorizontalAlignment="Left" Margin="57,18,0,0" Name="lblTipo" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="98,20,0,0" Name="edtTipo" VerticalAlignment="Top" Width="336" />
-                <Label Content="Descrição" Height="28" HorizontalAlignment="Left" Margin="29,54,0,0" Name="lblDescricao" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,56,30,0" Name="edtNome" VerticalAlignment="Top" Width="338" />
-                <Label Content="Marca" Height="28" HorizontalAlignment="Left" Margin="47,93,0,0" Name="lblMarca" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="96,95,0,0" Name="edtMarca" VerticalAlignment="Top" Width="338" />
-                <Label Content="Unidade" Height="28" HorizontalAlignment="Left" Margin="36,129,0,0" Name="lblUnidade" VerticalAlignment="Top" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,132,224,0" Name="edtUnidade" VerticalAlignment="Top" Width="144" />
-                <Label Content="Quantidade" Height="28" HorizontalAlignment="Left" Margin="18,166,0,0" Name="lblQuantidade" VerticalAlignment="Top" />
-                <Label Content="Data Val." Height="28" HorizontalAlignment="Left" Margin="247,130,0,0" Name="lblDataNascimento" VerticalAlignment="Top" />
-                <DatePicker Height="25" HorizontalAlignment="Left" Margin="319,130,0,0" Name="dataValidade" VerticalAlignment="Top" Width="115" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,168,224,0" Name="edtQuantidade" VerticalAlignment="Top" Width="144" />
+                <Label Content="Tipo" Height="28" HorizontalAlignment="Left" Margin="57,12,0,0" Name="lblTipo" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="98,14,0,0" Name="edtTipo" VerticalAlignment="Top" Width="336" Text="{Binding Tipo}" />
+                <Label Content="Descrição" Height="28" HorizontalAlignment="Left" Margin="29,43,0,0" Name="lblDescricao" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="98,45,0,0" Name="edtDescricao" VerticalAlignment="Top" Width="723" Text="{Binding Descricao}" />
+                <Label Content="Marca" Height="28" HorizontalAlignment="Left" Margin="47,75,0,0" Name="lblMarca" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="96,77,0,0" Name="edtMarca" VerticalAlignment="Top" Width="725" Text="{Binding Marca}" />
+                <Label Content="Unidade" Height="28" HorizontalAlignment="Left" Margin="36,108,0,0" Name="lblUnidade" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="96,109,0,0" Name="edtUnidade" VerticalAlignment="Top" Width="144" Text="{Binding Unidade}" />
+                <Label Content="Quantidade" Height="28" HorizontalAlignment="Left" Margin="18,141,0,0" Name="lblQuantidade" VerticalAlignment="Top" />
+                <Label Content="Data Val." Height="28" HorizontalAlignment="Left" Margin="255,107,0,0" Name="lblDataNascimento" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="319,109,0,0" Name="dataValidade" VerticalAlignment="Top" Width="123" SelectedDate="{Binding DataValidade}" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="96,141,0,0" Name="edtQuantidade" VerticalAlignment="Top" Width="144" Text="{Binding Quantidade}" PreviewTextInput="edtQuantidade_PreviewTextInput" />
+                <Border BorderBrush="Silver" BorderThickness="1" Height="43" HorizontalAlignment="Left" Margin="0,220,0,0" Name="border1" VerticalAlignment="Top" Width="836" />
+                <Button Content="Confirmar" Height="30" HorizontalAlignment="Left" Margin="296,227,0,0" Name="btnConfirmar" VerticalAlignment="Top" Width="109" Click="btnConfirmar_Click" />
+                <Button Content="Cancelar" Height="30" HorizontalAlignment="Left" Margin="427,227,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="109" Click="btnCancelar_Click" />
             </Grid>
         </GroupBox>
     </Grid>
